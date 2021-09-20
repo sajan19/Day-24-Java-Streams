@@ -27,11 +27,17 @@ public class JavaStreams {
                                   .collect(Collectors.toList());
         System.out.println("Method_2: Printing Double List: "+ streamList);
         //Method 3: Listing the First Element
-        Integer first = myNumberList.stream()
-                        .filter(isEvenFunction)
-                        .peek(n -> System.out.println("Peek Even Number: "+n))
-                        .findFirst()
-                        .orElse(null);
-        System.out.println("Method 3: First Even Number is: "+first);
+//        Integer first = myNumberList.stream()
+//                        .filter(isEvenFunction)
+//                        .peek(n -> System.out.println("Peek Even Number: "+n))
+//                        .findFirst()
+//                        .orElse(null);
+//        System.out.println("Method 3: First Even Number is: "+first);
+        //Method 4: Minimum Number
+        Integer min = myNumberList.stream()
+                .filter(isEvenFunction)
+                .min((n1, n2) -> n1-n2)
+                .orElse(null);
+        System.out.println("Method 4: Minimum Number is: "+min);
     }
 }
