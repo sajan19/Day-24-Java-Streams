@@ -53,5 +53,12 @@ public class JavaStreams {
         System.out.println("Sum of the Numbers is: "+sum);
         System.out.println("Count of the Numbers is: "+count);
         System.out.println("Average of the Numbers is: "+avg);
+        //Method 7: Checking all Even, single even or none are divisible by 6
+        boolean allEven = myNumberList.stream().allMatch(isEvenFunction);
+        boolean oneEven = myNumberList.stream().anyMatch(isEvenFunction);
+        boolean noneMultipleOfSix = myNumberList.stream().noneMatch(i -> i >=0 && i % 6 ==0);
+        System.out.println("Method 7: allEven: "+allEven);
+        System.out.println("Method 7: oneEven: "+oneEven);
+        System.out.println("Method 7: noneMultiplyOfSix: "+noneMultipleOfSix);
     }
 }
