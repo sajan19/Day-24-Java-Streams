@@ -60,5 +60,10 @@ public class JavaStreams {
         System.out.println("Method 7: allEven: "+allEven);
         System.out.println("Method 7: oneEven: "+oneEven);
         System.out.println("Method 7: noneMultiplyOfSix: "+noneMultipleOfSix);
+        //Method 8: Sort the Number in Ascending Order
+        List<Integer> sortedList = myNumberList.stream()
+                                    .sorted((n1, n2)->n1.compareTo(n2))
+                                    .collect(Collectors.toList());
+        System.out.println("Method 8: SortedList: "+sortedList);
     }
 }
