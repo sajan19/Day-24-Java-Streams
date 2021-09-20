@@ -46,5 +46,12 @@ public class JavaStreams {
                 .max(Comparator.comparing(Integer::intValue))
                 .orElse(null);
         System.out.println("Method 5: Maximum Number is: "+max);
+        //Method 6: Sum, Count and Average of Numbers
+        Integer sum =myNumberList.stream().reduce(0,Integer::sum);
+        double count = myNumberList.stream().count();
+        double avg = sum/count;
+        System.out.println("Sum of the Numbers is: "+sum);
+        System.out.println("Count of the Numbers is: "+count);
+        System.out.println("Average of the Numbers is: "+avg);
     }
 }
