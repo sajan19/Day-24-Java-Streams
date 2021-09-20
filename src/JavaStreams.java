@@ -17,6 +17,7 @@ public class JavaStreams {
 //        });
         //Method 2: Process the Stream, Apply Operations on the Stream and then
         //Store the Result
+        //Collection of Double Numbers in streamList
         List<Double> streamList = myNumberList.stream().map(toDoubleFunction).collect(Collectors.toList());
         System.out.println("Method_2: Printing Double List: "+ streamList);
     }
