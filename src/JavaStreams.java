@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -25,7 +26,7 @@ public class JavaStreams {
                                   .filter(isEvenFunction)
                                   .map(toDoubleFunction)
                                   .collect(Collectors.toList());
-        System.out.println("Method_2: Printing Double List: "+ streamList);
+        System.out.println("Method 2: Printing Double List: "+ streamList);
         //Method 3: Listing the First Element
 //        Integer first = myNumberList.stream()
 //                        .filter(isEvenFunction)
@@ -39,5 +40,11 @@ public class JavaStreams {
                 .min((n1, n2) -> n1-n2)
                 .orElse(null);
         System.out.println("Method 4: Minimum Number is: "+min);
+        //Method 5: Maximum Number
+        Integer max = myNumberList.stream()
+                .filter(isEvenFunction)
+                .max(Comparator.comparing(Integer::intValue))
+                .orElse(null);
+        System.out.println("Method 5: Maximum Number is: "+max);
     }
 }
