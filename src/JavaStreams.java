@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 public class JavaStreams {
     public static void main(String[] args) {
@@ -11,6 +12,8 @@ public class JavaStreams {
             myNumberList.add(i);
         //Method to Store Double Value
         Function<Integer,Double> toDoubleFunction = Integer::doubleValue;
+        //Method to distinguish Even Numbers
+        Predicate<Integer> isEvenFunction = n -> n >=0 && n%2 ==0;
         //Method 1: Processing the Stream
 //        myNumberList.stream().forEach(n ->{
 //            System.out.println("Method_1: Stream forEach Value: "+n);
@@ -18,7 +21,10 @@ public class JavaStreams {
         //Method 2: Process the Stream, Apply Operations on the Stream and then
         //Store the Result
         //Collection of Double Numbers in streamList
-        List<Double> streamList = myNumberList.stream().map(toDoubleFunction).collect(Collectors.toList());
+        List<Double> streamList = myNumberList.stream()
+                                  .filter(isEvenFunction)
+                                  .map(toDoubleFunction)
+                                  .collect(Collectors.toList());
         System.out.println("Method_2: Printing Double List: "+ streamList);
     }
 }
