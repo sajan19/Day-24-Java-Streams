@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-public class JavaStreams {
+public class NumberPlayUsingJavaStreams {
     public static void main(String[] args) {
         System.out.println("Welcome to Java Streams...");
         //Creating Sample Collection
